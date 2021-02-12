@@ -16,9 +16,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'bu7c_*qk#%xk@)b+%2v44$-vzj39e-2)yfg__w!s&9z+9uz@yh'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://wt7.herokuapp.com/','127.0.0.1','localhost']
 
 
 # Application definition
@@ -120,4 +120,5 @@ STATICFILES_DIRS = [
 ]
 
 STATICFILES_STORAGE = '.storage.WhiteNoiseStaticFilesStorage' 
+
 django_heroku.settings(locals())
