@@ -1,0 +1,144 @@
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+    {% block title %} {{post.title_tag}}{% endblock %}
+ 
+{% block content%}
+<!-- posts details -->
+
+    <h1>{{post.title}}</h1>
+    
+    <small>By: 
+        {{post.author.first_name}}-
+        {{post.author.last_name}}- 
+        {{post.post_date}}
+
+        {%if user.is_authenticated %}
+            {% if user.id == post.author.id %}
+                -<a href="{%url 'blog:update_post' post.pk %}"> (Edit)
+                </a>
+                <a href="{%url 'blog:delete_post' post.pk %}"> (Delete) </a>
+                <br/> 
+            {% endif %}
+        {% endif %}
+    </small><br/> 
+    <hr>
+    <br/> 
+
+    <div class="destination_image">
+
+        {% comment %} <img src={{post.img}} alt="">
+
+                <div class="destinations" id="destinations">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col text-center">
+                                <div class="section_subtitle">simply amazing places</div>
+                                <div class="section_title"><h2>Best products</h2></div>
+                            </div>
+                        </div>
+                        <div class="row destinations_row">
+                            <div class="col">
+                                <div class="destinations_container item_grid">
+
+                                    <!-- Destination -->
+                                    <div class="destination item">
+                                        <div class="destination_image">
+                                            <img src="{{item.img.url}}" alt="">
+
+                                           
+                                            <div class="spec_offer text-center"><a href="#">Get Special Offer</a></div>
+                                            
+                                        </div>
+                                        <div class="destination_content">
+                                            <div class="destination_title"><a href="pages/destinations.html">{{item.name}}</a></div>
+                                            <div class="destination_subtitle">
+                                                <p>{{item.desc}}</p>
+                                            </div>
+                                            <div class="destination_price">{{item.price}} Ghc</div> 
+                                        </div>
+                                    </div>
+                                  
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> {% endcomment %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    {{post.body|safe}}
+    <br/>
+    <br/>
+    <a href="{% url 'blog:home'%}" class="btn btn-secondary">
+    <br/>Back</a>
+
+    <br/><br/>
+    <hr>
+
+<!-- comments -->
+<a href="{% url 'blog:add_comment_to_post' pk=post.pk %}">Comments: {{ post.approved_comments.count }}</a>
+    {% for comment in post.comments.all %}
+
+    {% if user.is_authenticated or comment.approved_comment %}
+        <div class="comment">
+            <div class="date">
+                {{ comment.created_date }}
+                {% if not comment.approved_comment %}
+                <a class="btn btn-danger btn-sm" href="{% url 'blog:comment_remove' pk=comment.pk %}">remove<span class="glyphicon glyphicon-remove"></span></a>
+                <a class="btn btn-danger btn-sm" href="{% url 'blog:comment_approve' pk=comment.pk %}">approve<span class="glyphicon glyphicon-ok"></span></a>
+                {% endif %}
+            </div>
+            <strong>{{ comment.author }}</strong>
+            <p>{{ comment.text|linebreaks }}</p>
+        </div>
+        {% endif %}
+    {% empty %}
+        <a href="{% url 'blog:add_comment_to_post' pk=post.pk %}">Comments: {{ post.approved_comments.count }}</a>
+        <p>No comments here yet :(</p>
+    {% endfor %}
+   
+    
+ 
+    <!-- likes -->
+    <hr>
+    <br/>
+     
+    <form action="{% url 'blog:like_post' post.pk %}" method="POST">
+        {% csrf_token %}
+    {%if user.is_authenticated %}
+        {%if liked %}
+            <button type = "Submit", name= "post_id", value="{{ post.id }}", class ="btn btn-danger btn-sm">Unlike</button>
+        
+        {% else %}
+            <button type = "Submit", name= "post_id", value="{{ post.id }}", class ="btn btn-primary btn-sm">Like</button>
+        
+        {% endif %}
+    {% else %}
+       <small><a href="{%url 'login'%}">Login</a></small> to like
+
+    {% endif %}
+
+        -{{total_likes}} Likes 
+
+        
+    </form>
+    
+        
+
+
+{% endblock %}

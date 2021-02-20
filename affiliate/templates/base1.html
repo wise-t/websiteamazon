@@ -1,0 +1,191 @@
+ {% load static %}
+ <!DOCTYPE html>
+ <html lang="en">
+ 
+ <head>
+     <!-- Navigation -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="{% url 'home'%}">Wisdsol</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'affiliate:about'%}">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'home'%}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'affiliate:services'%}">Shop</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'affiliate:contact'%}">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'blog:home'%}">Blog</a>
+          </li> 
+            
+            
+            {%if user.is_authenticated %}
+            
+            <li class="nav-item">
+              <a class="nav-link" href="{%url 'logout'%}"><i class="fas fa-sign-in-alt"></i>logout</a>
+
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" >Hello,{{user.first_name}}...</a>
+
+            </li>
+
+
+
+            {%else%}
+    
+            <li class="nav-item">
+              <a class="nav-link" href="{%url 'members:register'%}"><i class="fas fa-user-plus"></i> Register</a></li>
+              <li class="nav-item">
+            <a class="nav-link" href="{%url 'login'%}"><i class="fas fa-sign-in-alt"></i>Login</a></li>
+            <li class="nav-item">
+            <a  class="nav-link"class="greetings">"You are not connected" </a>
+            </li>
+            {%endif%}
+            
+
+
+        </div>
+        <div class="header__navbar-toggle">
+            <span class="header__navbar-toggle-icons"></span>
+        </div>
+
+          <!-- <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Portfolio
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+              <a class="dropdown-item" href="portfolio-1-col.html">1 Column Portfolio</a>
+              <a class="dropdown-item" href="portfolio-2-col.html">2 Column Portfolio</a>
+              <a class="dropdown-item" href="portfolio-3-col.html">3 Column Portfolio</a>
+              <a class="dropdown-item" href="portfolio-4-col.html">4 Column Portfolio</a>
+              <a class="dropdown-item" href="portfolio-item.html">Single Portfolio Item</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Blog
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+              <a class="dropdown-item" href="{% url 'blog:home'%}">Wisdsol</a>
+              <a class="dropdown-item" href="blog-home-2.html">Blog Home 2</a>
+              <a class="dropdown-item" href="blog-post.html">Blog Post</a>
+            </div>
+          </li> -->
+          <!-- <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPages" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Other Pages
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPages">
+              <a class="dropdown-item" href="full-width.html">Full Width Page</a>
+              <a class="dropdown-item" href="sidebar.html">Sidebar Page</a>
+              <a class="dropdown-item" href="faq.html">FAQ</a>
+              <a class="dropdown-item" href="404.html">404</a>
+              <a class="dropdown-item" href="pricing.html">Pricing Table</a>
+            </div>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <!-- Slide One - Set the background image for this slide in the line below -->
+        <div class="carousel-item active" style="background-image: url('{% static 'affiliate/img/5.png' %}')">
+          <div class="carousel-caption d-none d-md-block">
+            <h3>wisdsol deals ...</h3>
+            <p>Best deal on line </p>
+          </div>
+        </div>
+        <!-- Slide Two - Set the background image for this slide in the line below -->
+        <div class="carousel-item" style="background-image: url('{% static 'affiliate/img/2.jpg' %}')">
+          <div class="carousel-caption d-none d-md-block">
+            <h3>Get solution For ur data management</h3>
+            <p> ...</p>
+          </div>
+        </div>
+        <!-- Slide Three - Set the background image for this slide in the line below -->
+        <div class="carousel-item" style="background-image: url('{% static 'affiliate/img/7.jpg' %}')">
+          <div class="carousel-caption d-none d-md-block">
+            <h3>Contact US</h3>
+            <p>For ur IT Solutions</p>
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </header>
+ 
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta name="description" content="">
+   <meta name="author" content="">
+ 
+   <title>wisdsol.com</title>
+ 
+   <!-- Bootstrap core CSS -->
+   <link href="{% static 'affiliate/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+ 
+   <!-- Custom styles for this template -->
+   <link href="{% static 'affiliate/css/modern-business.css' %}" rel="stylesheet">
+ 
+ <!-- </head>
+
+    <title>{% block title %}wisdsol{% endblock %}</title>
+  </head> -->
+    <body>
+      
+
+         <div class="container">
+          {% block content%} {% endblock %}
+        </div> 
+    <hr>
+
+    <footer class="py-5 bg-dark">
+      <div class="container">
+
+        
+        <p class="m-0 text-center text-white">Copyright &copy;<script>document.write(new Date().getFullYear());</script> 
+          All rights reserved <i class="fa fa-heart-o" aria-hidden="true"></i>
+           @ <a href="https://wisdsol.herokuapp.com" target="_blank">wisdsol-tech</a></p>
+
+        
+      </div>
+  
+    </footer>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="{% static 'affiliate/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'affiliate/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  </body>
+</html>

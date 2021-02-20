@@ -1,0 +1,20 @@
+
+
+{% extends 'base.html' %}
+
+
+<h1>add items....</h1>
+
+{% block content %}
+
+    <div class="form-group">
+        <form method="POST">
+            {% csrf_token %}
+            {{form.media}}
+            {{form.as_p}}
+            
+            <button class="btn btn-secondary"><a href="{% url 'affiliate:home'%}"></a>  New Product</button>
+        
+    </div>
+
+{% endblock content %}
