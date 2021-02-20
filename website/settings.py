@@ -19,7 +19,7 @@ SECRET_KEY = 'bu7c_*qk#%xk@)b+%2v44$-vzj39e-2)yfg__w!s&9z+9uz@yh'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG =False
 #DEBUG_PROPAGATE_EXCEPTIONS = True
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost','https://wisdsol.herokuapp.com/']
 
 
 # Application definition
