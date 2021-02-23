@@ -9,6 +9,43 @@
         <h4 class="text-center"> Welcome {{ user.username }} </h4>
     </div>
 </div>
+
+    <!-- Marketing Icons Section -->
+    <div class="row">
+        <div class="col-lg-4 mb-4">
+          <div class="card h-100">
+            <h4 class="card-header">School management system</h4>
+            <div class="card-body">
+              <p class="card-text">My School Manager</p>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="btn btn-primary">Download</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+          <div class="card h-100">
+            <h4 class="card-header">Super market management system</h4>
+            <div class="card-body">
+              <p class="card-text">My super Market Manager</p>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="btn btn-primary">Download</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+          <div class="card h-100">
+            <h4 class="card-header">Hospital management system</h4>
+            <div class="card-body">
+              <p class="card-text">My Hospital Manager</p>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="btn btn-primary">Download</a>
+            </div>
+          </div>
+        </div>
+      </div>
     {% for ass in backends.associated %}
         {% if ass.provider == 'facebook' %}
         <div class="col-md-6 text-center">

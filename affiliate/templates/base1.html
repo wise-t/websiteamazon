@@ -1,8 +1,21 @@
  {% load static %}
+
  <!DOCTYPE html>
  <html lang="en">
- 
+   
  <head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Travello template project">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
+  <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+  <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+  <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
+  <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
+  <link rel="stylesheet" type="text/css" href="styles/responsive.css">
      <!-- Navigation -->
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
@@ -21,9 +34,9 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'affiliate:services'%}">Shop</a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" href="{% url 'affiliate:contact'%}">Contact</a>
-          </li>
+          </li> -->
           <li class="nav-item">
             <a class="nav-link" href="{% url 'blog:home'%}">Blog</a>
           </li> 
@@ -165,19 +178,94 @@
         </div> 
     <hr>
 
-    <footer class="py-5 bg-dark">
+    <!-- <footer class="py-5 bg-dark"> -->
       <div class="container">
 
-        
-        <p class="m-0 text-center text-white">Copyright &copy;<script>document.write(new Date().getFullYear());</script> 
-          All rights reserved <i class="fa fa-heart-o" aria-hidden="true"></i>
-           @ <a href="https://wisdsol.herokuapp.com" target="_blank">wisdsol-tech</a></p>
+        <footer class="footer">
+          <!-- <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src={%static "images/footer_1.jpg"%} data-speed="0.8"></div>
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <div class="newsletter">
+                  <div class="newsletter_title_container text-center">
+                    <div class="newsletter_title">Subscribe to our newsletter to get the latest trends & news</div>
+                    <div class="newsletter_subtitle">Join our database NOW!</div>
+                  </div>
+                  <div class="newsletter_form_container">
+                    <form action="#" class="newsletter_form d-flex flex-md-row flex-column align-items-start justify-content-between" id="newsletter_form">
+                      <div class="d-flex flex-md-row flex-column align-items-start justify-content-between">
+                        <div><input type="text" class="newsletter_input newsletter_input_name" id="newsletter_input_name" placeholder="Name" required="required"><div class="input_border"></div></div>
+                        <div><input type="email" class="newsletter_input newsletter_input_email" id="newsletter_input_email" placeholder="Your e-mail" required="required"><div class="input_border"></div></div>
+                      </div>
+                      <div><button class="newsletter_button">subscribe</button></div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+            <div class="row footer_contact_row">
+              <div class="col-xl-10 offset-xl-1">
+                <div class="row">
+      
+                  <!-- Footer Contact Item -->
+                  <div class="col-xl-4 footer_contact_col">
+                    <div class="footer_contact_item d-flex flex-column align-items-center justify-content-start text-center">
+                      <div class="footer_contact_icon"><img src='' alt=""></div>
+                      <div class="footer_contact_title">give us a call</div>
+                      <div class="footer_contact_list">
+                        <ul>
+                          <li>Office Landline: +233 208867188</li>
+                          <li>Mobile: +233 0246478457</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+      
+                  <!-- Footer Contact Item -->
+                  <div class="col-xl-4 footer_contact_col">
+                    <div class="footer_contact_item d-flex flex-column align-items-center justify-content-start text-center">
+                      <div class="footer_contact_icon"><img src=''alt=""></div>
+                      <div class="footer_contact_title">come & drop by</div>
+                      <div class="footer_contact_list">
+                        <ul style="max-width:190px">
+                          <li>ACCRA GBAWE </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+      
+                  <!-- Footer Contact Item -->
+                  <div class="col-xl-4 footer_contact_col">
+                    <div class="footer_contact_item d-flex flex-column align-items-center justify-content-start text-center">
+                      <div class="footer_contact_icon"><img src='' alt=""></div>
+                      <div class="footer_contact_title">send us a message</div>
+                      <div class="footer_contact_list">
+                        <ul>
+                          <li>wisdsoltech@gmail.com</li>
+                          <!-- <li>wisdsol.herokuapp.com</li> -->
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+      
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col text-center"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                Copyright &copy;<script>document.write(new Date().getFullYear());</script> 
+                All rights reserved <i class="fa fa-heart-o" aria-hidden="true"></i>
+                @ <a href="https://wisdsol.herokuapp.com" target="_blank">wisdsol-tech</a>
+          
 
-        
+        </footer>  
       </div>
+    <br>
+   <br>
+        
   
-    </footer>
 
+    
 
 
     <!-- Optional JavaScript -->
@@ -187,5 +275,19 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script src="{% static 'affiliate/vendor/jquery/jquery.min.js' %}"></script>
     <script src="{% static 'affiliate/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="styles/bootstrap4/popper.js"></script>
+    <script src="styles/bootstrap4/bootstrap.min.js"></script>
+    <script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+    <script src="plugins/Isotope/isotope.pkgd.min.js"></script>
+    <script src="plugins/scrollTo/jquery.scrollTo.min.js"></script>
+    <script src="plugins/easing/easing.js"></script>
+    <script src="plugins/parallax-js-master/parallax.min.js"></script>
+    <script src="js/custom.js"></script>
+
+
+
   </body>
 </html>

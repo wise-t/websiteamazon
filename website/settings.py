@@ -1,6 +1,6 @@
 
 import os
-from pathlib import Path
+
 import django_heroku
 import dj_database_url
 #import dotenv
@@ -17,7 +17,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'bu7c_*qk#%xk@)b+%2v44$-vzj39e-2)yfg__w!s&9z+9uz@yh'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG =False
+DEBUG =True
 #DEBUG_PROPAGATE_EXCEPTIONS = True
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost','https://wisdsol.herokuapp.com/']
 
@@ -25,6 +25,7 @@ ALLOWED_HOSTS = ['127.0.0.1', 'localhost','https://wisdsol.herokuapp.com/']
 # Application definition
 
 INSTALLED_APPS = [
+    'django_extensions',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -148,9 +149,13 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
-STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
+#STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = '.storage.WhiteNoiseStaticFilesStorage' 
+
+
+
+
 
 LOGIN_REDIRECT_URL='home'
 LOGOUT_REDIRECT_URL='home'
