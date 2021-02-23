@@ -29,7 +29,7 @@ class Post(TimespamtedModel):
     author = models.ForeignKey(User,on_delete=models.CASCADE)
     body=RichTextField(blank=True, null=True)
     post_date = models.DateField(auto_now_add=True,blank=True, null=True)
-    category = models.CharField(max_length=255)
+    category = models.CharField(max_length=255,default='category')
     likes = models.ManyToManyField(User, related_name='blog_posts')
     img = models.ImageField(upload_to='pics/')
 

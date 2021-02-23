@@ -93,12 +93,22 @@ WSGI_APPLICATION = 'website.wsgi.application'
 
 import psycopg2.extensions
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+      'default': {
+          'ENGINE': 'django.db.backends.postgresql',
+          'NAME': 'wt',
+          'USER':'postgres',
+          'PASSWORD':'koko',
+          'HOST':'localhost',
+      }
+ } 
 
 
 # Password validation
